@@ -16,12 +16,14 @@ public class BaseballGameTest {
 	public void givenNullGuessNumber_throwIllegalArgEx() {
 		Game game = new Game();
 		try {
-			game.guss(null);
+			game.guess(null);
 			fail();
 		} catch (IllegalArgumentException e) {
 		}
 	}
 
 	private class Game {
+		public void guess(String guessNum) {
+		}
 	}
 }
