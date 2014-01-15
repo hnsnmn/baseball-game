@@ -14,4 +14,7 @@ public class BaseballGameTest {
 	public void canCreate() {
 		new Game();
 	}
+
+	private class Game {
+	}
 }
