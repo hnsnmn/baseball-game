@@ -2,6 +2,8 @@ package baseball;
 
 import org.junit.Test;
 
+import static junit.framework.Assert.fail;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hongseongmin
@@ -11,8 +13,13 @@ import org.junit.Test;
  */
 public class BaseballGameTest {
 	@Test
-	public void canCreate() {
-		new Game();
+	public void givenNullGuessNumber_throwIllegalArgEx() {
+		Game game = new Game();
+		try {
+			game.guss(null);
+			fail();
+		} catch (IllegalArgumentException e) {
+		}
 	}
 
 	private class Game {
