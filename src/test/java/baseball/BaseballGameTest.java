@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class BaseballGameTest {
 	@Test
-	public void nothing() {
-
+	public void canCreate() {
+		new Game();
 	}
 }
