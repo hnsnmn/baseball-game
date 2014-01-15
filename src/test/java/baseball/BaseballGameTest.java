@@ -24,6 +24,7 @@ public class BaseballGameTest {
 
 	private class Game {
 		public void guess(String guessNum) {
+			if (guessNum == null) throw new IllegalArgumentException();
 		}
 	}
 }
