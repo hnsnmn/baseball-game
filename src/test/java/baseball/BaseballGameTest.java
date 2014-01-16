@@ -23,8 +23,12 @@ public class BaseballGameTest {
 
 	@Test
 	public void givenNullGuessNumber_throwIllegalArgEx() {
+		assertIllegalArgExThrown(null);
+	}
+
+	private void assertIllegalArgExThrown(String guessNum) {
 		try {
-			game.guess(null);
+			game.guess(guessNum);
 			fail();
 		} catch (IllegalArgumentException e) {
 		}
@@ -32,12 +36,7 @@ public class BaseballGameTest {
 
 	@Test
 	public void givenInvalidLengthOfGuessNumber_throwIllegalArgEx() {
-		try {
-			game = new Game();
-			game.guess("12");
-			fail();
-		} catch (IllegalArgumentException e) {
-		}
+		assertIllegalArgExThrown("12");
 	}
 
 
