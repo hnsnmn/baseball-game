@@ -22,6 +22,17 @@ public class BaseballGameTest {
 		}
 	}
 
+	@Test
+	public void givenInvalidLengthOfGuessNumber_throwIllegalArgEx() {
+		Game game = new Game();
+		try {
+			game.guess("12");
+			fail();
+		} catch (IllegalArgumentException e) {
+		}
+	}
+
+
 	private class Game {
 		public void guess(String guessNum) {
 			if (guessNum == null) throw new IllegalArgumentException();
