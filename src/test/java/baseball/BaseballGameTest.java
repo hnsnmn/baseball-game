@@ -1,5 +1,6 @@
 package baseball;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.fail;
@@ -12,9 +13,16 @@ import static junit.framework.Assert.fail;
  * To change this template use File | Settings | File Templates.
  */
 public class BaseballGameTest {
+
+	private Game game;
+
+	@Before
+	public void setUp() throws Exception {
+		game = new Game();
+	}
+
 	@Test
 	public void givenNullGuessNumber_throwIllegalArgEx() {
-		Game game = new Game();
 		try {
 			game.guess(null);
 			fail();
@@ -24,8 +32,8 @@ public class BaseballGameTest {
 
 	@Test
 	public void givenInvalidLengthOfGuessNumber_throwIllegalArgEx() {
-		Game game = new Game();
 		try {
+			game = new Game();
 			game.guess("12");
 			fail();
 		} catch (IllegalArgumentException e) {
