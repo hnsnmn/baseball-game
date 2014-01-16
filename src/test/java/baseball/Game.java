@@ -9,6 +9,10 @@ package baseball;
 */
 class Game {
 	public void guess(String guessNum) {
+		assertGuessNumberValid(guessNum);
+	}
+
+	private void assertGuessNumberValid(String guessNum) {
 		if (guessNum == null) throw new IllegalArgumentException();
 		if (guessNum.length() != 3) throw new IllegalArgumentException();
 		for (char ch : guessNum.toCharArray())
