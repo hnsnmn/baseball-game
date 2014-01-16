@@ -25,6 +25,8 @@ public class BaseballGameTest {
 	public void givenInvalideGuessNumber_throwIllegalArgEx() {
 		assertIllegalArgExThrown(null);
 		assertIllegalArgExThrown("12");
+		assertIllegalArgExThrown("12a");
+		assertIllegalArgExThrown("a45");
 	}
 
 	private void assertIllegalArgExThrown(String guessNum) {
