@@ -40,11 +40,20 @@ public class BaseballGameTest {
 	@Test
 	public void givenExactMatchingGuessNum_returnSolvedResult() {
 		generateGameNumber("123");
-		assertGuessResult("123", true, 3, 0);
+		assertSolvedGuessResult("123");
 
 		generateGameNumber("456");
-		assertGuessResult("456", true, 3, 0);
-		assertGuessResult("678", false, 0, 0);
+		assertSolvedGuessResult("456");
+		String guessNum = "678";
+		assertNonSolvedGuessResult(guessNum);
+	}
+
+	private void assertNonSolvedGuessResult(String guessNum) {
+		assertGuessResult(guessNum, false, 0, 0);
+	}
+
+	private void assertSolvedGuessResult(String guessNum) {
+		assertGuessResult(guessNum, true, 3, 0);
 	}
 
 	private void generateGameNumber(String gameNumber) {
