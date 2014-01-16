@@ -12,7 +12,7 @@ class Game {
 
 	public GuessResult guess(String guessNum) {
 		assertGuessNumberValid(guessNum);
-		return null;
+		return new GuessResult();
 	}
 
 	private void assertGuessNumberValid(String guessNum) {
