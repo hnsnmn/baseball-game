@@ -39,9 +39,12 @@ public class BaseballGameTest {
 
 	@Test
 	public void givenExactMatchingGuessNum_returnSolvedResult() {
+		game.number = "123";
+
+		GuessResult guessResult = game.guess("123");
 		assertThat(guessResult.isSolved(), is(true));
-		assertThat(guessResult.isStrike(), is(3));
-		assertThat(guessResult.isBalls(), is(0));
+		assertThat(guessResult.getStrike(), is(3));
+		assertThat(guessResult.getBalls(), is(0));
 	}
 
 

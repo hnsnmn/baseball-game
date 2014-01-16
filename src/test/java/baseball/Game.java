@@ -8,8 +8,11 @@ package baseball;
 * To change this template use File | Settings | File Templates.
 */
 class Game {
-	public void guess(String guessNum) {
+	public String number;
+
+	public GuessResult guess(String guessNum) {
 		assertGuessNumberValid(guessNum);
+		return null;
 	}
 
 	private void assertGuessNumberValid(String guessNum) {
