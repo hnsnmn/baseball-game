@@ -40,26 +40,21 @@ public class BaseballGameTest {
 	@Test
 	public void givenExactMatchingGuessNum_returnSolvedResult() {
 		game.number = "123";
-
-		GuessResult guessResult = game.guess("123");
-		assertThat(guessResult.isSolved(), is(true));
-		assertThat(guessResult.getStrike(), is(3));
-		assertThat(guessResult.getBalls(), is(0));
+		assertGuessResult("123", true, 3, 0);
 
 		game.number = "456";
-		GuessResult guessResult1 = game.guess("456");
-		assertThat(guessResult1.isSolved(), is(true));
-		assertThat(guessResult1.getStrike(), is(3));
-		assertThat(guessResult1.getBalls(), is(0));
-
-		GuessResult guessResult2 = game.guess("678");
-		assertThat(guessResult2.isSolved(), is(false));
-		assertThat(guessResult2.getStrike(), is(0));
-		assertThat(guessResult2.getBalls(), is(0));
+		assertGuessResult("456", true, 3, 0);
+		assertGuessResult("678", false, 0, 0);
 
 
 	}
 
+	private void assertGuessResult(String guessNum, boolean solved, int stirke, int balls) {
+		GuessResult guessResult = game.guess(guessNum);
+		assertThat(guessResult.isSolved(), is(solved));
+		assertThat(guessResult.getStrike(), is(stirke));
+		assertThat(guessResult.getBalls(), is(balls));
+	}
 
 
 	private void assertIllegalArgExThrown(String guessNum) {
