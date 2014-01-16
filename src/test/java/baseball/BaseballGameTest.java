@@ -45,6 +45,18 @@ public class BaseballGameTest {
 		assertThat(guessResult.isSolved(), is(true));
 		assertThat(guessResult.getStrike(), is(3));
 		assertThat(guessResult.getBalls(), is(0));
+
+		game.number = "456";
+
+		GuessResult guessResult1 = game.guess("456");
+		assertThat(guessResult1.isSolved(), is(true));
+		assertThat(guessResult1.getStrike(), is(3));
+		assertThat(guessResult1.getBalls(), is(0));
+
+		GuessResult guessResult2 = game.guess("789");
+		assertThat(guessResult2.isSolved(), is(false));
+		assertThat(guessResult2.getStrike(), is(0));
+		assertThat(guessResult2.getBalls(), is(0));
 	}
 
 
