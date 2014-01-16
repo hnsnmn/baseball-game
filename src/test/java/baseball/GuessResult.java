@@ -12,6 +12,12 @@ public class GuessResult {
 	private int strike;
 	private int balls;
 
+	public GuessResult(boolean solved, int strike, int balls) {
+		this.solved = solved;
+		this.strike = strike;
+		this.balls = balls;
+	}
+
 	public boolean isSolved() {
 		return solved;
 	}
