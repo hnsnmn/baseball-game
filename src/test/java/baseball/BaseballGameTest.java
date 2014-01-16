@@ -27,6 +27,9 @@ public class BaseballGameTest {
 		assertIllegalArgExThrown("12");
 		assertIllegalArgExThrown("12a");
 		assertIllegalArgExThrown("a45");
+		assertIllegalArgExThrown("113");
+		assertIllegalArgExThrown("011");
+		assertIllegalArgExThrown("141");
 	}
 
 	private void assertIllegalArgExThrown(String guessNum) {
@@ -38,10 +41,4 @@ public class BaseballGameTest {
 	}
 
 
-	private class Game {
-		public void guess(String guessNum) {
-			if (guessNum == null) throw new IllegalArgumentException();
-			if (guessNum.length() != 3) throw new IllegalArgumentException();
-		}
-	}
 }
