@@ -14,8 +14,14 @@ class Game {
 		assertGuessNumberValid(guessNum);
 		if (number.equals(guessNum))
 			return new GuessResult(true, 3, 0);
-		else
-			return new GuessResult(false, 0, 0);
+		else {
+			int strike = 0;
+			for (int i = 0; i < number.length(); i++) {
+				int idx = number.indexOf(guessNum.charAt(i));
+				if (idx == i) strike++;
+			}
+			return new GuessResult(false, strike, 0);
+		}
 	}
 
 	private void assertGuessNumberValid(String guessNum) {
