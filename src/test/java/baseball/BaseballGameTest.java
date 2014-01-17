@@ -45,11 +45,11 @@ public class BaseballGameTest {
 		generateGameNumber("456");
 		assertSolvedGuessResult("456");
 
-		assertGuessResult("789", false, 0, 0);
+		assertNonSolvedResult("789", false, 0, 0);
 	}
 
 	private void assertSolvedGuessResult(String guessNum) {
-		assertGuessResult(guessNum, true, 3, 0);
+		assertNonSolvedResult(guessNum, true, 3, 0);
 	}
 
 	private void generateGameNumber(String gameNumber) {
@@ -76,25 +76,30 @@ public class BaseballGameTest {
 	public void givenSomeMatchingGuessNm_returnNonSolvedResult() {
 		generateGameNumber("123");
 		// strike
-		assertGuessResult("724", false, 1, 0);
-		assertGuessResult("523", false, 2, 0);
-		assertGuessResult("129", false, 2, 0);
-		assertGuessResult("093", false, 1, 0);
+
+		assertNonSolvedResult("724", false, 1, 0);
+		assertNonSolvedResult("523", false, 2, 0);
+		assertNonSolvedResult("129", false, 2, 0);
+		assertNonSolvedResult("093", false, 1, 0);
 
 		// ball
-		assertGuessResult("517", false, 0, 1);
-		assertGuessResult("297", false, 0, 1);
-		assertGuessResult("539", false, 0, 1);
+		assertNonSolvedResult("517", false, 0, 1);
+		assertNonSolvedResult("297", false, 0, 1);
+		assertNonSolvedResult("539", false, 0, 1);
 
 		// 2ball and 3ball
-		assertGuessResult("531", false, 0, 2);
-		assertGuessResult("231", false, 0, 3);
+		assertNonSolvedResult("531", false, 0, 2);
+		assertNonSolvedResult("231", false, 0, 3);
 
 		// strike and ball
-		assertGuessResult("132", false, 1, 2);
-		assertGuessResult("134", false, 1, 1);
-		assertGuessResult("321", false, 1, 2);
+		assertNonSolvedResult("132", false, 1, 2);
+		assertNonSolvedResult("134", false, 1, 1);
+		assertNonSolvedResult("321", false, 1, 2);
 
+	}
+
+	private void assertNonSolvedResult(String guessNum, boolean solved, int stirke, int balls) {
+		assertGuessResult(guessNum, solved, stirke, balls);
 	}
 
 }

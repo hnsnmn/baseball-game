@@ -12,7 +12,7 @@ class Game {
 
 	public GuessResult guess(String guessNum) {
 		assertGuessNumberValid(guessNum);
-		if (number.equals(guessNum))
+		if (solved(guessNum))
 			return new GuessResult(true, 3, 0);
 		else {
 			int strike = 0;
@@ -24,6 +24,10 @@ class Game {
 			}
 			return new GuessResult(false, strike, balls);
 		}
+	}
+
+	private boolean solved(String guessNum) {
+		return number.equals(guessNum);
 	}
 
 	private void assertGuessNumberValid(String guessNum) {
