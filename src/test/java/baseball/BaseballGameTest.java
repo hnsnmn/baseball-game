@@ -75,7 +75,14 @@ public class BaseballGameTest {
 	@Test
 	public void givenSomeMatchingGuessNm_returnNonSolvedResult() {
 		generateGameNumber("123");
-		assertGuessResult("024", false, 1, 0);
+		// strike
+		assertGuessResult("724", false, 1, 0);
+		assertGuessResult("523", false, 2, 0);
+		assertGuessResult("129", false, 2, 0);
+		assertGuessResult("093", false, 1, 0);
+
+		// ball
+		assertGuessResult("517", false, 0, 1);
 	}
 
 }
