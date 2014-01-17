@@ -85,6 +85,11 @@ public class BaseballGameTest {
 		assertGuessResult("517", false, 0, 1);
 		assertGuessResult("297", false, 0, 1);
 		assertGuessResult("539", false, 0, 1);
+
+		// 2ball
+		assertGuessResult("531", false, 0, 2);
+		assertGuessResult("231", false, 0, 3);
+
 	}
 
 }
