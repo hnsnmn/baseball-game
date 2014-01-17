@@ -40,8 +40,7 @@ public class BaseballGameTest {
 	@Test
 	public void givenExactMatchingGuessNum_returnSolvedResult() {
 		generateGameNumber("123");
-		String guessNum = "123";
-		assertSolvedGuessResult(guessNum);
+		assertSolvedGuessResult("123");
 
 		generateGameNumber("456");
 		assertSolvedGuessResult("456");
@@ -73,5 +72,10 @@ public class BaseballGameTest {
 		}
 	}
 
+	@Test
+	public void givenSomeMatchingGuessNm_returnNonSolvedResult() {
+		generateGameNumber("123");
+		assertGuessResult("024", false, 1, 0);
+	}
 
 }
