@@ -86,9 +86,14 @@ public class BaseballGameTest {
 		assertGuessResult("297", false, 0, 1);
 		assertGuessResult("539", false, 0, 1);
 
-		// 2ball
+		// 2ball and 3ball
 		assertGuessResult("531", false, 0, 2);
 		assertGuessResult("231", false, 0, 3);
+
+		// strike and ball
+		assertGuessResult("132", false, 1, 2);
+		assertGuessResult("134", false, 1, 1);
+		assertGuessResult("321", false, 1, 2);
 
 	}
 
