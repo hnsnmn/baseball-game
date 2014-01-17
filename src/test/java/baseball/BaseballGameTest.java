@@ -83,6 +83,8 @@ public class BaseballGameTest {
 
 		// ball
 		assertGuessResult("517", false, 0, 1);
+		assertGuessResult("297", false, 0, 1);
+		assertGuessResult("539", false, 0, 1);
 	}
 
 }

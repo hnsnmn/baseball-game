@@ -16,11 +16,13 @@ class Game {
 			return new GuessResult(true, 3, 0);
 		else {
 			int strike = 0;
+			int balls = 0;
 			for (int i = 0; i < number.length(); i++) {
 				int idx = number.indexOf(guessNum.charAt(i));
 				if (idx == i) strike++;
+				else if (idx > -1) balls++;
 			}
-			return new GuessResult(false, strike, 0);
+			return new GuessResult(false, strike, balls);
 		}
 	}
 
