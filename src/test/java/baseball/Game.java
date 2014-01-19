@@ -8,7 +8,7 @@ package baseball;
 * To change this template use File | Settings | File Templates.
 */
 class Game {
-	public String number;
+	private String number;
 
 	public GuessResult guess(String guessNum) {
 		assertGuessNumberValid(guessNum);
@@ -40,5 +40,9 @@ class Game {
 				guessNum.charAt(1) == guessNum.charAt(2) ||
 				guessNum.charAt(0) == guessNum.charAt(2))
 			throw new IllegalArgumentException();
+	}
+
+	public void generateNumber() {
+		this.number = gameNumberGenerator.generate();
 	}
 }

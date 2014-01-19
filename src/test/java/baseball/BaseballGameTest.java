@@ -53,7 +53,8 @@ public class BaseballGameTest {
 	}
 
 	private void generateGameNumber(String gameNumber) {
-		game.number = gameNumber;
+//		game.number = gameNumber;
+		game.generateNumber();
 	}
 
 	private void assertGuessResult(String guessNum, boolean solved, int stirke, int balls) {
@@ -75,8 +76,7 @@ public class BaseballGameTest {
 	@Test
 	public void givenSomeMatchingGuessNm_returnNonSolvedResult() {
 		generateGameNumber("123");
-		// strike
-
+		// strikes
 		assertNonSolvedResult("724", false, 1, 0);
 		assertNonSolvedResult("523", false, 2, 0);
 		assertNonSolvedResult("129", false, 2, 0);
