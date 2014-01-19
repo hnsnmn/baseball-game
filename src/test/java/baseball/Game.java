@@ -9,6 +9,7 @@ package baseball;
 */
 class Game {
 	private String number;
+	private GameNumberGenerator gameNumberGenerator;
 
 	public GuessResult guess(String guessNum) {
 		assertGuessNumberValid(guessNum);
@@ -44,5 +45,9 @@ class Game {
 
 	public void generateNumber() {
 		this.number = gameNumberGenerator.generate();
+	}
+
+	public void setGameNumberGenerator(GameNumberGenerator gameNumberGenerator) {
+		this.gameNumberGenerator = gameNumberGenerator;
 	}
 }
