@@ -50,4 +50,5 @@ class Game {
 	public void setGameNumberGenerator(GameNumberGenerator gameNumberGenerator) {
 		this.gameNumberGenerator = gameNumberGenerator;
 	}
+
 }

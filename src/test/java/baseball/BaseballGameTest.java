@@ -52,8 +52,14 @@ public class BaseballGameTest {
 		assertNonSolvedResult(guessNum, true, 3, 0);
 	}
 
-	private void generateGameNumber(String gameNumber) {
+	private void generateGameNumber(final String gameNumber) {
 //		game.number = gameNumber;
+		game.setGameNumberGenerator(new GameNumberGenerator() {
+			@Override
+			public String generate() {
+				return gameNumber;
+			}
+		});
 		game.generateNumber();
 	}
 
