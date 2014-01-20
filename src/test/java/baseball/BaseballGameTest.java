@@ -53,7 +53,6 @@ public class BaseballGameTest {
 	}
 
 	private void generateGameNumber(final String gameNumber) {
-//		game.number = gameNumber;
 		game.setGameNumberGenerator(new GameNumberGenerator() {
 			@Override
 			public String generate() {
